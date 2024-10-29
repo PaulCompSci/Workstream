@@ -17,9 +17,9 @@ import { BlackListedPhnumberModule } from './black-listed-phnumber/black-listed-
         port:  configService.get('DB_PORT'),
         username :  configService.get('DB_USERNAME'),
         password:  configService.get('DB_PASSWORD'),
-        database : configService.get('DB_Name'), 
+        database : configService.get('DB_NAME'), 
         entities : [join(process.cwd(), 'dist/**/*.entity.js')] , 
-        synchronize: true,
+         synchronize: true,
 
       }),
     }),
