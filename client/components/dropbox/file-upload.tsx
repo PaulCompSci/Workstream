@@ -47,9 +47,10 @@ export const FileUpload = ({
   const { getRootProps, isDragActive } = useDropzone({
     multiple: false,
     noClick: true,
+    accept: { "text/csv": [".csv"] }, // Restrict drag-and-drop to CSV files only
     onDrop: handleFileChange,
     onDropRejected: (error) => {
-      console.log(error);
+      console.log("Only CSV files are accepted.", error);
     },
   });
 
@@ -65,6 +66,7 @@ export const FileUpload = ({
             ref={fileInputRef}
             id="file-upload-handle"
             type="file"
+            accept=".csv" // Restrict file selection to CSV files only
             onChange={(e) => handleFileChange(Array.from(e.target.files || []))}
             className="hidden"
           />
@@ -170,7 +172,7 @@ export const FileUpload = ({
       </div>
       
       {/* Centered Submit Button */}
-      <div className="flex justify-center mt-4  pt-6  mb-4 bg-slate-50">
+      <div className="flex justify-center mt-4 pt-6 mb-4 bg-slate-50">
         <SubmitButton />
       </div>
     </div>
