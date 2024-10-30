@@ -72,7 +72,7 @@ The **CSV File Upload & Blacklist Manager** is a web application that provides f
    To test the import script, navigate to:
 
    ```
-   http://localhost:(your server port number)/imports
+   http://localhost:(your server port number)/black-listed-phnumber/import
    ```
 
    This will import the `.csv` file provided in the assignment PDF.

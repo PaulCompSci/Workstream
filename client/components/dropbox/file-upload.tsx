@@ -19,7 +19,7 @@ export const FileUpload = () => {
     fileInputRef.current?.click();
   };
 
-  const { getRootProps, isDragActive } = useDropzone({
+  const { getRootProps } = useDropzone({
     multiple: false,
     noClick: true,
     accept: { "text/csv": [".csv"] },
