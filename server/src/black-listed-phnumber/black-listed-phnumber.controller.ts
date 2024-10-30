@@ -1,15 +1,40 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, HttpException, HttpStatus } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, HttpException, HttpStatus, UseInterceptors, UploadedFile } from '@nestjs/common';
+import { FileInterceptor } from '@nestjs/platform-express';
 import { BlackListedPhnumberService } from './black-listed-phnumber.service';
 import { CreateBlackListedPhnumberDto } from './dto/create-black-listed-phnumber.dto';
 import { UpdateBlackListedPhnumberDto } from './dto/update-black-listed-phnumber.dto';
+import { diskStorage } from 'multer';
+
 
 @Controller('black-listed-phnumber')
 export class BlackListedPhnumberController {
   constructor(private readonly blackListedPhnumberService: BlackListedPhnumberService) {}
 
-  @Post()
-  create(@Body() createBlackListedPhnumberDto: CreateBlackListedPhnumberDto) {
-    return this.blackListedPhnumberService.create(createBlackListedPhnumberDto);
+  @Post('upload')
+  @UseInterceptors(FileInterceptor('file', {
+    storage: diskStorage({
+      destination: './uploads',
+      filename: (req, file, callback) => {
+        callback(null, `uploaded_${Date.now()}_${file.originalname}`);
+      },
+    }),
+    fileFilter: (req, file, callback) => {
+      if (file.mimetype !== 'text/csv') {
+        return callback(new HttpException('Only .csv files are allowed!', HttpStatus.BAD_REQUEST), false);
+      }
+      callback(null, true);
+    },
+  }))
+  async uploadFile(@UploadedFile() file: Express.Multer.File): Promise<string> {
+    try {
+      await this.blackListedPhnumberService.importPhoneNumbersFromUploadedFile(file.path);
+      return 'File uploaded and phone numbers imported successfully';
+    } catch (error) {
+      throw new HttpException(
+        'Failed to import phone numbers. Please try again later.',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
   }
 
 
