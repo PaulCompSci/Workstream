@@ -17,7 +17,7 @@ const Home = () => {
             <div className="h-1 w-12 bg-blue-500 rounded"></div>
           </div>
         </div>
-          <div className="w-full max-w-4xl mx-auto min-h-96 border border-dashed bg-white dark:bg-white rounded-lg">
+          <div className="w-full max-w-4xl mx-auto min-h-96  bg-white dark:bg-slate-50 rounded-lg">
         <FileUpload  />
       
       </div>
