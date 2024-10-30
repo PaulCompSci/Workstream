@@ -1,18 +1,41 @@
-"use client"
-import React from 'react'
-
+"use client";
+import React, { useEffect, useState } from "react";
 
 type BlacklistedPhone = {
   id: number;
   phoneNumber: string;
 };
 
-const blacklistedPhones: BlacklistedPhone[] = [
-  { id: 1, phoneNumber: "+1234567890" },
-  { id: 2, phoneNumber: "+0987654321" },
-];
+const BlacklistedPhoneTable: React.FC = () => {
+  const [blacklistedPhones, setBlacklistedPhones] = useState<BlacklistedPhone[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
-const DisplayTable = () => {
+  // Define the API URL directly in the component
+  const apiUrl = process.env.NODE_ENV === "production"
+    ? "https://production-url.com/black-listed-phnumber"
+    : "http://localhost:2899/black-listed-phnumber";
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch data: ${response.statusText}`);
+        }
+        const data = await response.json();
+        setBlacklistedPhones(data);
+      } catch (error) {
+        setError(error instanceof Error ? error.message : "Unknown error");
+      }
+    };
+
+    fetchData();
+  }, [apiUrl]);
+
+  if (error) {
+    return <p className="text-red-500">Error: {error}</p>;
+  }
+
   return (
     <div className="container mx-auto my-8 p-4">
       <h2 className="text-2xl font-bold mb-4">Blacklisted Phone Numbers</h2>
@@ -39,7 +62,7 @@ const DisplayTable = () => {
         </table>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DisplayTable
+export default BlacklistedPhoneTable;
