@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FileUpload } from "@/components/dropbox/file-upload"
+import SubmitButton from '@/components/dropbox/button';
 // import { Upload } from 'lucide-react';
 // import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -53,7 +54,9 @@ const Home = () => {
         </Card> */}
         <div className="w-full max-w-4xl mx-auto min-h-96 border border-dashed bg-white dark:bg-black border-neutral-200 dark:border-neutral-800 rounded-lg">
       <FileUpload  />
+     
     </div>
+   
 
         {/* Phone Numbers List Section */}
         {/* <Card className="shadow-md">
