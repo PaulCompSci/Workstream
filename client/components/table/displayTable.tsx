@@ -37,7 +37,7 @@ const BlacklistedPhoneTable: React.FC = () => {
   }
 
   return (
-    <div className="container mx-auto my-8 p-4">
+    <div className="container mx-auto my-8 p-4 text-black">
       <h2 className="text-2xl font-bold mb-4">Blacklisted Phone Numbers</h2>
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
