@@ -3,15 +3,6 @@
 
 Welcome to the **Blacklisted Phone Number Manager**! This application allows users to upload `.csv` files containing phone numbers, which are then processed, stored, and displayed in a blacklist table for further management.
 
----
-
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [Features](#Features)
-- [Installation](#Installation)
-- [Demo](#Demo)
-- [Technologies](#Technologies)
 
 ---
 
