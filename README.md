@@ -8,10 +8,10 @@ Welcome to the **Blacklisted Phone Number Manager**! This application allows use
 ## 📋 Table of Contents
 
 - [Overview](#overview)
-- [Features](#features)
-- [Installation](#installation)
-- [Demo](#screenshots--demo)
-- [Technologies](#technologies)
+- [Features](#Features)
+- [Installation](#Installation)
+- [Demo](#Demo)
+- [Technologies](#Technologies)
 
 ---
 
