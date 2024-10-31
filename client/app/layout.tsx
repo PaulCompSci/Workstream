@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Assignment",
+  title: "take home assignment",
   description: "Workstream take home assignment submission",
 };
 

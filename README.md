@@ -10,11 +10,8 @@ Welcome to the **Blacklisted Phone Number Manager**! This application allows use
 - [Overview](#overview)
 - [Features](#features)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Screenshots & Demo](#screenshots--demo)
-- [Project Structure](#project-structure)
+- [Demo](#screenshots--demo)
 - [Technologies](#technologies)
-- [License](#license)
 
 ---
 
@@ -94,10 +91,15 @@ To demonstrate my understanding of both NestJS (backend) and React (frontend) an
 
 ---
 
-## 🎥 Screenshots & Demo
+## 🎥 Demo
 
-Below is a video demonstrating how the web application works, including how the script processes and manages blacklisted phone numbers.
+Explore the functionality of our web application in the videos below, showcasing how the platform processes and manages blacklisted phone numbers effectively.
 
+- **Script Demo:** A walkthrough of how the script work
+  [Watch the Script Demo](https://youtu.be/2gZid27ryx8)
+
+- **Web Application Demo:** A demonstration of the full web app in action. 
+  [Watch the Web App Demo](https://youtu.be/E7dEl-Dx5yo)
 
 ---
 
@@ -107,12 +109,3 @@ Below is a video demonstrating how the web application works, including how the 
 - **Frontend:** React
 - **Database:** PostgreSQL
 
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
-
-Enjoy managing your blacklisted phone numbers with ease! Let me know if you have questions or run into any issues during setup.

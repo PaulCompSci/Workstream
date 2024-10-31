@@ -12,9 +12,9 @@ const Home = () => {
           {/* Logo */}
           <div className="flex justify-center mb-4">
             <Image
-              src="https://www.workstream.us/hubfs/default.svg" // Replace with your SVG filename
+              src="https://www.workstream.us/hubfs/default.svg" 
               alt="Logo"
-              width={100} // Adjust width and height as needed
+              width={100} 
               height={100}
               className="h-20 mb-4 w-auto"
             />
